@@ -1,7 +1,3 @@
-Here is the text hard-wrapped to a standard 80-character width, which will stop it from scrolling off the edge of your screen in text editors like `nano` or on GitHub.
-
-I also updated `Modelfile` to the lowercase `modelfile` in the instructions to match our Ubuntu terminal setup.
-
 ```markdown
 # Local LLM Prompts for Bug Bounty Research
 
