@@ -1,7 +1,7 @@
 ```markdown
 # Local LLM Prompts for Bug Bounty Research
 
-This repository contains an optimized [Ollama](https://ollama.com/) `Modelfile` blueprint tailored specifically for authorized security research, bug bounty hunting, and offensive security workflows. 
+This repository contains an optimized [Ollama](https://ollama.com/) `modelfile` blueprint tailored specifically for authorized security research, bug bounty hunting, and offensive security workflows. 
 
 ## The Backstory
 
