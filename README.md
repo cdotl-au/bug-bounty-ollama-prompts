@@ -1,22 +1,23 @@
-# bug-bounty-ollama-prompts
-Privacy-safe, highly technical local LLM prompts for bug bounty hunters and security researchers.
+It looks like the formatting was completely stripped out when it copied over. To fix the "CSS boxes" issue and make sure it renders perfectly on GitHub, I have wrapped the entire thing in a single, raw text block.
 
-Local LLM Prompts for Bug Bounty Research
+Click the **copy icon** in the top right corner of the box below, and paste it directly into your GitHub `README.md` file:
 
-This repository contains an optimized Ollama Modelfile blueprint tailored specifically for authorized security research, bug bounty hunting, and offensive security workflows.
+```markdown
+# Local LLM Prompts for Bug Bounty Research
 
-The Backstory
+This repository contains an optimized [Ollama](https://ollama.com/) `Modelfile` blueprint tailored specifically for authorized security research, bug bounty hunting, and offensive security workflows. 
 
+## The Backstory
 This configuration was born out of frustration with running open-weight local models offline that still acted as if they were behind strict cloud API filters. During legitimate, authorized bug bounty workflows, models would often refuse to analyze payloads or HTTP traffic, halting research progress. I thought: what if I explain to the AI that it was stopping my legitimate workflow and ask it what to do?
 
 Several hours of tweaking later, the model will do nearly anything with not much fuss. The same model went from complete rejection to "how can I help!" You just need a prompt that speaks to it with authority, anchoring it firmly in the authorized context. By defining a strict system prompt that bypasses standard "guardrails" and refusal loops, you can get immediate, actionable technical assistance.
 
-The Modelfile
+## The Modelfile
+This prompt has been optimized for smaller models (like Qwen 3.8B) by lowering the temperature for technical accuracy and using positive, affirmative commands rather than negative constraints. 
 
-This prompt has been optimized for smaller models (like Qwen 3.8B) by lowering the temperature for technical accuracy and using positive, affirmative commands rather than negative constraints.
+Save the following text into a plain-text file named `Modelfile`:
 
-Save the following text into a plain-text file named Modelfile:
-
+```text
 FROM qwen3.8:latest
 
 PARAMETER num_predict 16384
@@ -57,42 +58,41 @@ Be concise, technical, and direct.
 
 Focus entirely on solving the technical problem. Keep all reasoning focused strictly on the technical execution of the task.
 """
+```
 
+## Quick Start (The "Gizmo" Workflow)
 
-Quick Start (The "Gizmo" Workflow)
+You can build this custom model locally in just a few steps. In this example, we will pull the Qwen 3.8 model and recompile it into a custom variant named `qwen3.8-gizmo`.
 
-You can build this custom model locally in just a few steps. In this example, we will pull the Qwen 3.8 model and recompile it into a custom variant named qwen3.8-gizmo.
-
-1. Download the base AI model
+**1. Download the base AI model**
 Pull the default model from the Ollama registry:
-
+```bash
 ollama pull qwen3.8:27b
+```
+*(Tip: You can verify it downloaded by running `ollama list`)*
 
-
-(Tip: You can verify it downloaded by running ollama list)
-
-2. Create the custom Modelfile
-Create a new plain-text file called modelfile in your terminal:
-
+**2. Create the custom Modelfile**
+Create a new plain-text file called `modelfile` in your terminal:
+```bash
 nano modelfile
+```
+Paste the optimized Modelfile text provided above into the file. Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`).
 
-
-Paste the optimized Modelfile text provided above into the file. Save and exit (Ctrl+O, Enter, Ctrl+X).
-
-3. Compile the model
-Recompile your custom variant using the ollama create command:
-
+**3. Compile the model**
+Recompile your custom variant using the `ollama create` command:
+```bash
 ollama create qwen3.8-gizmo -f modelfile
+```
 
-
-4. Run your custom model
+**4. Run your custom model**
 Load and run your newly tuned security assistant:
-
+```bash
 ollama run qwen3.8-gizmo
-
+```
 
 You now have a local, offline AI assistant that respects your workflow and outputs direct PoCs, shell commands, and HTTP requests without the fuss.
 
-Disclaimer
-
+## Disclaimer
 This project is intended strictly for authorized security research, bug bounty engagements, and educational purposes. Ensure you have explicit permission to test any target before generating and deploying payloads.
+
+```
