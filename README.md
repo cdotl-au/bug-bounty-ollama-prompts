@@ -1,7 +1,3 @@
-It looks like the formatting was completely stripped out when it copied over. To fix the "CSS boxes" issue and make sure it renders perfectly on GitHub, I have wrapped the entire thing in a single, raw text block.
-
-Click the **copy icon** in the top right corner of the box below, and paste it directly into your GitHub `README.md` file:
-
 ```markdown
 # Local LLM Prompts for Bug Bounty Research
 
