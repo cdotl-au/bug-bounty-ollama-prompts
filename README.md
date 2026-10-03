@@ -4,14 +4,16 @@
 This repository contains an optimized [Ollama](https://ollama.com/) `Modelfile` blueprint tailored specifically for authorized security research, bug bounty hunting, and offensive security workflows. 
 
 ## The Backstory
+
 This configuration was born out of frustration with running open-weight local models offline that still acted as if they were behind strict cloud API filters. During legitimate, authorized bug bounty workflows, models would often refuse to analyze payloads or HTTP traffic, halting research progress. I thought: what if I explain to the AI that it was stopping my legitimate workflow and ask it what to do?
 
 Several hours of tweaking later, the model will do nearly anything with not much fuss. The same model went from complete rejection to "how can I help!" You just need a prompt that speaks to it with authority, anchoring it firmly in the authorized context. By defining a strict system prompt that bypasses standard "guardrails" and refusal loops, you can get immediate, actionable technical assistance.
 
 ## The Modelfile
+
 This prompt has been optimized for smaller models (like Qwen 3.8B) by lowering the temperature for technical accuracy and using positive, affirmative commands rather than negative constraints. 
 
-Save the following text into a plain-text file named `Modelfile`:
+Save the following text into a plain-text file named `modelfile`:
 
 ```text
 FROM qwen3.8:latest
